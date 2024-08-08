@@ -1107,10 +1107,10 @@ class EsmForSequenceClassification(EsmPreTrainedModel):
             head_mask=head_mask,
             inputs_embeds=inputs_embeds,
             output_attentions=output_attentions,
-            output_hidden_states=output_hidden_states,
+            output_hidden_states=True,
             return_dict=return_dict,
         )
-        sequence_output = outputs[0]
+        sequence_output = outputs.hidden_states[self.config.classifier_layer]
         logits = self.classifier(sequence_output)
 
         loss = None
