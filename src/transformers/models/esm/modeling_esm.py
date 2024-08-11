@@ -1110,7 +1110,7 @@ class EsmForSequenceClassification(EsmPreTrainedModel):
             output_hidden_states=True,
             return_dict=return_dict,
         )
-        sequence_output = outputs.hidden_states[self.config.classifier_layer]
+        sequence_output = outputs.hidden_states[self.config.output_layer_number]
         logits = self.classifier(sequence_output)
 
         loss = None
