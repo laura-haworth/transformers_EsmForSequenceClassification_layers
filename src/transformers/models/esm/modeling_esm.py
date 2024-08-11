@@ -1145,7 +1145,7 @@ class EsmForSequenceClassification(EsmPreTrainedModel):
         return SequenceClassifierOutput(
             loss=loss,
             logits=logits,
-            hidden_states=outputs.hidden_states,
+            hidden_states=None,
             attentions=outputs.attentions,
         )
 
