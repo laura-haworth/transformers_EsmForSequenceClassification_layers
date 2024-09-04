@@ -295,6 +295,7 @@ class PretrainedConfig(PushToHubMixin):
         self.finetuning_task = kwargs.pop("finetuning_task", None)
         self.id2label = kwargs.pop("id2label", None)
         self.label2id = kwargs.pop("label2id", None)
+        self.classification_dropout = kwargs.pop("classification_dropout", 0.0)
         self.output_layer_number = kwargs.pop("output_layer_number", None)
         self.classifier_pooling = kwargs.pop("classifier_output_pooling", "cls")
         if self.label2id is not None and not isinstance(self.label2id, dict):
